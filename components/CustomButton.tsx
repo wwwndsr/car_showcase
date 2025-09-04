@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { CustomButtonProps } from '@/types';
 
 import Image from 'next/image';
