@@ -4,9 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { calculateCarRent, generateCarImageUrl } from "../utils";
-// Update the import path below to the actual location of your CarProps type, for example:
 import { CarProps } from "../types";
-// If your types are in a different folder, adjust the path accordingly.
 import CustomButton from "./CustomButton";
 import CarDetails from "./CarDetails";
 

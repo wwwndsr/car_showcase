@@ -24,7 +24,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => (
           leaveFrom='opacity-100'
           leaveTo='opacity-0'
         >
-          <div className='fixed inset-0 bg-black bg-opacity-25' />
+          <div className='fixed inset-0 bg-black bg-opacity/25' />
         </Transition.Child>
 
         <div className='fixed inset-0 overflow-y-auto'>
@@ -60,13 +60,13 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => (
 
                   <div className='flex gap-3'>
                     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                      <Image src={generateCarImageUrl(car, "29")} alt='car model' fill priority className='object-contain' />
+                      <Image src={generateCarImageUrl(car)} alt='car model' fill priority className='object-contain' />
                     </div>
                     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                      <Image src={generateCarImageUrl(car, "33")} alt='car model' fill priority className='object-contain' />
+                      <Image src={generateCarImageUrl(car)} alt='car model' fill priority className='object-contain' />
                     </div>
                     <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                      <Image  src={generateCarImageUrl(car, "13")} alt='car model' fill priority className='object-contain' />
+                      <Image  src={generateCarImageUrl(car)} alt='car model' fill priority className='object-contain' />
                     </div>
                   </div>
                 </div>

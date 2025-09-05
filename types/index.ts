@@ -13,13 +13,13 @@ export interface CarProps {
   model: string;
   transmission: string;
   year: number;
+  image_url?: string;
 }
 
 export interface FilterProps {
   manufacturer?: string;
   year?: number;
   model?: string;
-  limit?: number;
   fuel?: string;
 }
 
