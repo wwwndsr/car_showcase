@@ -1,6 +1,7 @@
 import { MouseEventHandler } from "react";
 
 export interface CarProps {
+  id: string; // Добавьте это поле
   city_mpg: number;
   class: string;
   combination_mpg: number;
@@ -21,6 +22,7 @@ export interface FilterProps {
   year?: number;
   model?: string;
   fuel?: string;
+  limit?: number;
 }
 
 export interface HomeProps {

@@ -17,13 +17,13 @@ const CarCard = ({ car }: CarCardProps) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const carRent = calculateCarRent(city_mpg, year);
+  const carRent = calculateCarRent(city_mpg ?? 0, year ?? new Date().getFullYear());
 
   return (
     <div className="car-card group">
       <div className="car-card__content">
         <h2 className="car-card__content-title">
-          {make} {model}
+          {make || 'Unknown make'} {model || 'Unknown model'}
         </h2>
       </div>
 
@@ -34,7 +34,13 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
 
       <div className='relative w-full h-40 my-3 object-contain'>
-        <Image src={generateCarImageUrl(car)} alt='car model' fill priority className='object-contain' />
+        <Image 
+          src={generateCarImageUrl(car)} 
+          alt='car model' 
+          fill 
+          priority 
+          className='object-contain' 
+        />
       </div>
 
       <div className='relative flex w-full mt-2'>
@@ -42,16 +48,22 @@ const CarCard = ({ car }: CarCardProps) => {
           <div className='flex flex-col justify-center items-center gap-2'>
             <Image src='/steering-wheel.svg' width={20} height={20} alt='steering wheel' />
             <p className='text-[14px] leading-[17px]'>
-              {transmission === "a" ? "Automatic" : "Manual"}
+              {transmission === "a" ? "Automatic" : 
+               transmission === "m" ? "Manual" : 
+               transmission ? transmission.toUpperCase() : "AUTOMATIC"}
             </p>
           </div>
           <div className="car-card__icon">
-            <Image src="/tire.svg" width={20} height={20} alt="seat" />
-            <p className="car-card__icon-text">{drive.toUpperCase()}</p>
+            <Image src="/tire.svg" width={20} height={20} alt="drive" />
+            <p className="car-card__icon-text">
+              {drive ? drive.toUpperCase() : 'FWD'}
+            </p>
           </div>
           <div className="car-card__icon">
-            <Image src="/gas.svg" width={20} height={20} alt="seat" />
-            <p className="car-card__icon-text">{city_mpg} MPG</p>
+            <Image src="/gas.svg" width={20} height={20} alt="fuel efficiency" />
+            <p className="car-card__icon-text">
+              {city_mpg ?? 'N/A'} MPG
+            </p>
           </div>
         </div>
 
